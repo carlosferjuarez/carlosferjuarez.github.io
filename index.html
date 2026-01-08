@@ -1,1 +1,410 @@
-<h1>Portafolio personal</h1>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tu Nombre — Portafolio</title>
+  <meta name="description" content="Portafolio personal: sobre mí, cursos, proyectos y divulgación." />
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #0f172a;      /* slate-900 */
+      --muted:#475569;      /* slate-600 */
+      --line:#e2e8f0;       /* slate-200 */
+      --brand:#1d4ed8;      /* blue-700 */
+      --brand2:#0ea5e9;     /* sky-500 */
+      --card:#ffffffcc;
+      --shadow: 0 8px 30px rgba(2,8,23,.08);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    /* Fondo con patrón hex suave */
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(29,78,216,.10), transparent 35%),
+        radial-gradient(circle at 85% 30%, rgba(14,165,233,.10), transparent 40%),
+        #fff;
+      min-height: 100vh;
+    }
+    .pattern{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cg fill='none' stroke='%2394a3b8' stroke-width='1'%3E%3Cpath d='M30 2 L90 2 L118 52 L90 102 L30 102 L2 52 Z'/%3E%3Cpath d='M-30 2 L30 2 L58 52 L30 102 L-30 102 L-58 52 Z'/%3E%3Cpath d='M90 2 L150 2 L178 52 L150 102 L90 102 L62 52 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 180px 156px;
+      background-position: 0 0;
+    }
+
+    header{
+      padding: 44px 16px 18px;
+      position: relative;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .hero{
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226,232,240,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 26px;
+    }
+
+    .title{
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .subtitle{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .chips{
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chip{
+      font-size: 13px;
+      color: rgba(15,23,42,.9);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.75);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    nav{
+      margin-top: 14px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(226,232,240,.9);
+    }
+
+    .navrow{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .navlink{
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--brand);
+      cursor: pointer;
+      font-weight: 600;
+      padding: 10px 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      position: relative;
+    }
+    .navlink:hover{
+      background: rgba(29,78,216,.08);
+    }
+    .navlink[aria-current="page"]{
+      background: rgba(29,78,216,.12);
+      color: #0b2ca8;
+    }
+
+    main{
+      padding: 18px 16px 60px;
+    }
+
+    .panel{
+      display: none;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(226,232,240,.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+    .panel.active{
+      display: block;
+    }
+
+    h2{
+      margin: 0 0 12px;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+    }
+    p{
+      margin: 0 0 12px;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .muted{
+      color: var(--muted);
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .card{
+      grid-column: span 12;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.8);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    @media (min-width: 760px){
+      .card.half{ grid-column: span 6; }
+      .card.third{ grid-column: span 4; }
+    }
+
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+    }
+    .card a{
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .card a:hover{ text-decoration: underline; }
+
+    footer{
+      padding: 18px 16px 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* Accesibilidad: foco visible */
+    :focus-visible{
+      outline: 3px solid rgba(14,165,233,.35);
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pattern" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap">
+      <div class="hero">
+        <h1 class="title">Tu Nombre Aquí</h1>
+        <p class="subtitle">
+          Actuaría / Data Science / (lo que quieras). Portafolio con proyectos, cursos y artículos de divulgación.
+        </p>
+
+        <div class="chips" aria-label="etiquetas">
+          <span class="chip">Python</span>
+          <span class="chip">SQL</span>
+          <span class="chip">R</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Finanzas</span>
+        </div>
+
+        <nav aria-label="Secciones">
+          <div class="navrow">
+            <a class="navlink" href="#sobre-mi" data-tab="sobre-mi">Sobre mí</a>
+            <span class="muted">|</span>
+            <a class="navlink" href="#cursos" data-tab="cursos">Cursos</a>
+            <span class="muted">|</span>
+            <a class="navlink" href="#proyectos" data-tab="proyectos">Proyectos</a>
+            <span class="muted">|</span>
+            <a class="navlink" href="#articulos" data-tab="articulos">Artículos</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- SOBRE MÍ -->
+      <section id="sobre-mi" class="panel" aria-labelledby="t-sobre-mi">
+        <h2 id="t-sobre-mi">Sobre mí</h2>
+        <p>
+          Aquí va tu biografía: 3–6 líneas con un tono personal pero profesional.
+          Ejemplo: “Soy Daniela…, me interesa…, me gusta trabajar en…, me motiva…”.
+        </p>
+        <p class="muted">
+          Puedes agregar hobbies (fotografía, escritura, café/té, etc.) sin perder seriedad:
+          solo explica cómo conectan con tu forma de aprender/crear.
+        </p>
+
+        <div class="grid">
+          <div class="card half">
+            <h3>Contacto</h3>
+            <p>
+              Email: <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a><br/>
+              GitHub: <a href="https://github.com/TUUSUARIO" target="_blank" rel="noreferrer">github.com/TUUSUARIO</a><br/>
+              LinkedIn: <a href="#" target="_blank" rel="noreferrer">Tu LinkedIn</a>
+            </p>
+          </div>
+          <div class="card half">
+            <h3>CV</h3>
+            <p>
+              <a href="cv.pdf" target="_blank" rel="noreferrer">Descargar CV (PDF)</a>
+              <span class="muted">(sube un archivo llamado <b>cv.pdf</b> al repo)</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURSOS -->
+      <section id="cursos" class="panel" aria-labelledby="t-cursos">
+        <h2 id="t-cursos">Cursos</h2>
+        <p class="muted">Lista de cursos impartidos, talleres, ayudantías o asesorías.</p>
+
+        <div class="grid">
+          <article class="card half">
+            <h3>Curso / Taller 1</h3>
+            <p>
+              Breve descripción (temas, público, año).<br/>
+              Material: <a href="#" target="_blank" rel="noreferrer">slides</a> ·
+              <a href="#" target="_blank" rel="noreferrer">códigos</a>
+            </p>
+          </article>
+
+          <article class="card half">
+            <h3>Curso / Taller 2</h3>
+            <p>
+              Breve descripción + enfoque. (ej. Bayes, ML, Python, etc.)
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="proyectos" class="panel" aria-labelledby="t-proyectos">
+        <h2 id="t-proyectos">Proyectos</h2>
+        <p class="muted">
+          Lo ideal: 6–10 proyectos “curados”, cada uno con 1–2 líneas y links.
+        </p>
+
+        <div class="grid">
+          <article class="card third">
+            <h3>Proyecto A</h3>
+            <p>
+              Qué resolviste + stack.<br/>
+              <a href="#" target="_blank" rel="noreferrer">Repositorio</a> ·
+              <a href="#" target="_blank" rel="noreferrer">Demo</a>
+            </p>
+          </article>
+
+          <article class="card third">
+            <h3>Proyecto B</h3>
+            <p>
+              Métrica/resultado (si aplica).<br/>
+              <a href="#" target="_blank" rel="noreferrer">Repositorio</a>
+            </p>
+          </article>
+
+          <article class="card third">
+            <h3>Proyecto C</h3>
+            <p>
+              Caso de estudio / notebook.<br/>
+              <a href="#" target="_blank" rel="noreferrer">Notebook</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ARTÍCULOS -->
+      <section id="articulos" class="panel" aria-labelledby="t-articulos">
+        <h2 id="t-articulos">Artículos de divulgación</h2>
+        <p class="muted">
+          Puedes escribir en Markdown y luego convertir a HTML, o enlazar a Medium/Substack/Notion.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Artículo 1 — Título</h3>
+            <p>
+              2 líneas: de qué trata y para quién es.<br/>
+              <a href="#" target="_blank" rel="noreferrer">Leer</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Artículo 2 — Título</h3>
+            <p>
+              2 líneas + link.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Tu Nombre — Hecho con GitHub Pages.
+  </footer>
+
+  <script>
+    const tabs = ["sobre-mi", "cursos", "proyectos", "articulos"];
+    const panels = new Map(tabs.map(id => [id, document.getElementById(id)]));
+    const links = Array.from(document.querySelectorAll("[data-tab]"));
+
+    function setActive(tabId, pushHash = false){
+      const id = tabs.includes(tabId) ? tabId : "sobre-mi";
+
+      // mostrar panel
+      tabs.forEach(t => panels.get(t).classList.toggle("active", t === id));
+
+      // marcar link activo
+      links.forEach(a => {
+        const active = a.dataset.tab === id;
+        if (active) a.setAttribute("aria-current", "page");
+        else a.removeAttribute("aria-current");
+      });
+
+      // actualizar hash en URL
+      if (pushHash) {
+        history.pushState(null, "", "#" + id);
+      }
+    }
+
+    // Click en nav
+    links.forEach(a => {
+      a.addEventListener("click", (e) => {
+        // dejamos el hash normal, pero controlamos el render
+        const id = a.dataset.tab;
+        setActive(id, false);
+      });
+    });
+
+    // Si abren con hash (ej. /#proyectos), respétalo; si no, default "sobre-mi"
+    function initFromHash(){
+      const hash = (location.hash || "").replace("#", "");
+      setActive(hash || "sobre-mi", false);
+    }
+
+    window.addEventListener("hashchange", initFromHash);
+    initFromHash();
+
+    // Año en footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
