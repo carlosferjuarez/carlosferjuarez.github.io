@@ -203,3 +203,47 @@ body {
   .grid{ grid-template-columns: 1fr; }
   .container{ margin: 1rem; }
 }
+
+/* --------------------------
+   HOME: sin topbar, nav debajo del subtítulo
+   -------------------------- */
+
+.container--home{
+  margin-top: 3.5rem;
+}
+
+.hero--home{
+  border-bottom: none;
+  padding: 2.5rem 0 1.25rem 0;
+}
+
+.nav--home{
+  margin: 1.25rem auto 0 auto;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.nav__link--home{
+  background: rgba(11, 58, 102, 0.10);
+  color: #0b3a66;
+  border: 1px solid rgba(11, 58, 102, 0.18);
+}
+
+.nav__link--home:hover{
+  background: rgba(11, 58, 102, 0.16);
+}
+
+/* --------------------------
+   Subpáginas: título simple
+   -------------------------- */
+
+.page-title{
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  letter-spacing: 0.2px;
+}
+
+/* Link activo en la topbar */
+.nav__link.is-active{
+  background: rgba(255,255,255,0.18);
+}
