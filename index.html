@@ -1,66 +1,35 @@
 <!doctype html>
 <html lang="es">
+  
 <head>
   <meta charset="utf-8" />
   <title>Carlos Juárez</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+  
 <body>
-  <!-- Barra de navegación -->
-  <header class="topbar">
-    <div class="topbar__inner">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">Carlos Juárez</a>
 
-      <nav class="nav" aria-label="Navegación principal">
-        <a class="nav__link" href="#sobre-mi">Sobre mí</a>
-        <a class="nav__link" href="#cursos">Cursos</a>
-        <a class="nav__link" href="#proyectos">Proyectos</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contenedor para el título -->
-  <main class="container" id="inicio">
-    <section class="hero" aria-label="Presentación">
+  <main class="container container--home">
+    <section class="hero hero--home" aria-label="Inicio">
       <h1 class="hero__title">Carlos Fernando Juárez Pacheco</h1>
       <p class="hero__subtitle">Matemáticas aplicadas / Portafolio personal</p>
+
+      <nav class="nav nav--home" aria-label="Navegación principal">
+        <a class="nav__link nav__link--home" href="sobre-mi.html">Sobre mí</a>
+        <a class="nav__link nav__link--home" href="cursos.html">Cursos</a>
+        <a class="nav__link nav__link--home" href="proyectos.html">Proyectos</a>
+      </nav>
     </section>
 
-    <!-- Secciones -->
-    <section class="section" id="sobre-mi">
-      <h2 class="section__title">Sobre mí</h2>
-      <p class="section__text">
-        Pendiente: Voy a agregar pasatiempos e intereses.
-      </p>
-    </section>
-
-    <section class="section" id="cursos">
-      <h2 class="section__title">Cursos</h2>
-      <ul class="list">
-        <li>Profesional de AWS Cloud (CLF-C02)</li>
-      </ul>
-    </section>
-
-    <section class="section" id="proyectos">
-      <h2 class="section__title">Proyectos</h2>
-
-      <div class="grid">
-        <article class="card">
-          <h3 class="card__title">Una introducción a la teoría de gráficas fuertemente regulares</h3>
-          <p class="card__text">Descripción</p>
-          <a class="card__link" href="#" target="_blank" rel="noopener">Ver proyecto</a>
-        </article>
-      
-      </div>
-    </section>
-
-    <!-- Pie de página-->
-    <footer class="footer">
+    <footer class="footer footer--home">
       <small>© <span id="year"></span> Carlos Juárez</small>
     </footer>
-    
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   
 </body>
 
