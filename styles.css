@@ -2,6 +2,17 @@
    Fondo general – Pi Factory - Tomado de Hero Patterns
    -------------------------- */
 
+:root{
+  --ink: #1f2330;
+  --muted: rgba(31, 35, 48, 0.70);
+  --brand: #0b3a66;        /* azul tipo barra superior */
+  --brand-2: #0a2f53;      /* un poco más oscuro */
+  --card: rgba(255,255,255,0.86);
+  --border: rgba(31,35,48,0.10);
+}
+
+*{ box-sizing: border-box; }
+
 html, body {
   height: 100%;
 }
@@ -17,3 +28,178 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
+/* --------------------------
+   Barra superior (navbar)
+   -------------------------- */
+
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(0deg, var(--brand) 0%, var(--brand-2) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.topbar__inner{
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.nav{
+  margin-left: auto;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.nav__link{
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  transition: background 120ms ease;
+}
+
+.nav__link:hover{
+  background: rgba(255,255,255,0.14);
+}
+
+/* --------------------------
+   Contenedor blanco
+   -------------------------- */
+
+.container{
+  max-width: 1050px;
+  margin: 1.25rem auto 3rem auto;
+  padding: 2rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(31,35,48,0.12);
+  backdrop-filter: blur(6px);
+}
+
+/* --------------------------
+   Hero (título centrado)
+   -------------------------- */
+
+.hero{
+  text-align: center;
+  padding: 1.25rem 0 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__title{
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.2px;
+}
+
+.hero__subtitle{
+  margin: 0.75rem auto 0 auto;
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* --------------------------
+   Secciones
+   -------------------------- */
+
+.section{
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type{
+  border-bottom: none;
+}
+
+.section__title{
+  margin: 0 0 0.6rem 0;
+  font-size: 1.35rem;
+}
+
+.section__text{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.list{
+  margin: 0.5rem 0 0 1.1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* --------------------------
+   Cards de proyectos
+   -------------------------- */
+
+.grid{
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card{
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.card__title{
+  margin: 0 0 0.4rem 0;
+  font-size: 1.1rem;
+}
+
+.card__text{
+  margin: 0 0 0.75rem 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.card__link{
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.card__link:hover{
+  text-decoration: underline;
+}
+
+/* --------------------------
+   Footer
+   -------------------------- */
+
+.footer{
+  text-align: center;
+  padding-top: 1.5rem;
+  color: var(--muted);
+}
+
+/* --------------------------
+   Responsive
+   -------------------------- */
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .container{ margin: 1rem; }
+}
