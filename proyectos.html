@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Proyectos · Carlos Juárez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html">Carlos Juárez</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="sobre-mi.html">Sobre mí</a>
+        <a class="nav__link" href="cursos.html">Cursos</a>
+        <a class="nav__link is-active" href="proyectos.html">Proyectos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Proyectos</h1>
+
+    <div class="grid">
+      <article class="card">
+        <h3 class="card__title">Una introducción a la teoría de gráficas fuertemente regulares</h3>
+        <p class="card__text">Descripción</p>
+        <a class="card__link" href="#" target="_blank" rel="noopener">Ver proyecto</a>
+      </article>
+    </div>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Carlos Juárez</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
