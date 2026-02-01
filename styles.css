@@ -247,3 +247,39 @@ body {
 .nav__link.is-active{
   background: rgba(255,255,255,0.18);
 }
+
+/* --------------------------
+   Botones (CV)
+   -------------------------- */
+
+.btn-row{
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1.25rem 0;
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 58, 102, 0.22);
+  background: rgba(11, 58, 102, 0.12);
+  color: #0b3a66;
+}
+
+.btn:hover{
+  background: rgba(11, 58, 102, 0.18);
+}
+
+.btn--secondary{
+  border: 1px solid rgba(31, 35, 48, 0.14);
+  background: rgba(31, 35, 48, 0.06);
+  color: rgba(31, 35, 48, 0.90);
+}
+
+.btn--secondary:hover{
+  background: rgba(31, 35, 48, 0.10);
+}
