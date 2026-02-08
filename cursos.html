@@ -23,9 +23,55 @@
   <main class="container">
     <h1 class="page-title">Cursos</h1>
 
-    <ul class="list">
-      <li>Profesional de AWS Cloud (CLF-C02)</li>
-    </ul>
+    <!-- DESPLEGABLE 1 -->
+    <details class="accordion">
+      <summary class="accordion__summary">Analista de datos asociado en SQL</summary>
+
+      <div class="grid">
+        <article class="card">
+          <h3 class="card__title">Introduction to SQL</h3>
+          <a class="card__btn"
+             href="assets/cursos/Analista%20de%20datos%20asociado%20en%20SQL/Introduction%20to%20SQL.pdf"
+             target="_blank"
+             rel="noopener">
+            Ver constancia
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Intermediate SQL</h3>
+          <a class="card__btn"
+             href="assets/cursos/Analista%20de%20datos%20asociado%20en%20SQL/Intermediate%20SQL.pdf"
+             target="_blank"
+             rel="noopener">Ver constancia</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Analyzing Students' Mental Health</h3>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Joining Data in SQL</h3>
+          <a class="card__btn"
+             href="assets/cursos/Analista%20de%20datos%20asociado%20en%20SQL/Joining%20Data%20in%20SQL.pdf"
+             target="_blank"
+             rel="noopener">Ver constancia</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Data Manipulation in SQL</h3>
+        </article>
+      </div>
+    </details>
+
+    <!-- DESPLEGABLE 2 -->
+    <details class="accordion">
+      <summary class="accordion__summary">Analista de datos en Power BI</summary>
+      
+      <div class="grid">
+        
+      </div>
+    </details>
 
     <footer class="footer">
       <small>© <span id="year"></span> Carlos Juárez</small>
@@ -36,5 +82,4 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-  
 </html>
