@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Docencia · Carlos Juárez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html">Carlos Juárez</a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="sobre-mi.html">Sobre mí</a>
+        <a class="nav__link" href="cursos.html">Cursos</a>
+        <a class="nav__link" href="proyectos.html">Proyectos</a>
+        <a class="nav__link is-active" href="docencia.html">Docencia</a>
+        <a class="nav__link" href="articulos.html">Artículos</a>
+        <a class="nav__link" href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Docencia</h1>
+    <p class="section__text">
+      Ayudantías impartidas en la Facultad de Ciencias, UNAM
+    </p>
+
+    <section class="section">
+      <h2 class="section__title">Experiencia</h2>
+      <ul class="list">
+        <li>
+          <strong>Ayudantía:</strong> (Álgebra Lineal I) — (FC-UNAM) — (2026-2).
+          <br />
+          <span style="color: rgba(31,35,48,0.70);">Descripción: .</span>
+        </li>
+        <li>
+          <strong>Ayudantía:</strong> (Ecuaciones Diferenciales Parciales) — (FC-UNAM) — (2026-1).
+          <br />
+          <span style="color: rgba(31,35,48,0.70);">Descripción: .</span>
+        </li>
+        <li>
+          <strong>Ayudantía:</strong> (Análisis Matemático Aplicado) — (FC-UNAM) — (2026-1).
+          <br />
+          <span style="color: rgba(31,35,48,0.70);">Descripción: .</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Materiales</h2>
+    </section>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Carlos Juárez</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
