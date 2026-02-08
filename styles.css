@@ -284,3 +284,52 @@ body {
 .btn--secondary:hover{
   background: rgba(31, 35, 48, 0.10);
 }
+
+.accordion {
+  margin-bottom: 14px;
+}
+
+.accordion__summary {
+  cursor: pointer;
+  list-style: none; /* quita el marcador por defecto en algunos navegadores */
+  user-select: none;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  font-weight: 600;
+}
+
+.accordion__summary::-webkit-details-marker {
+  display: none; /* Safari/Chrome: quita el triángulo default */
+}
+
+.accordion__summary::after {
+  content: "▾";
+  float: right;
+  opacity: 0.8;
+}
+
+.accordion[open] > .accordion__summary::after {
+  content: "▴";
+}
+
+.accordion .grid {
+  margin-top: 12px;
+}
+
+.card__btn{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card__btn:hover{
+  background: rgba(255,255,255,0.14);
+}
+
